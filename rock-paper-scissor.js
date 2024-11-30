@@ -28,7 +28,7 @@ function playRound(humanChoice , computerChoice){
     const player = humanChoice;
     const cpu = computerChoice;
     if (player == cpu) {
-        return console.log('This is a tie')
+        return 'This is a tie'
     }
     //Comparison for computers win, humans loss
     if ( 
@@ -38,7 +38,7 @@ function playRound(humanChoice , computerChoice){
     ) {
         console.log(`Skynet has won this round. ${cpu} beats ${player}`);
         ++computerScore;
-        return
+        return `Computer points ${computerScore}`
         }
 
     //Comparison for humans win, computers loss
@@ -50,24 +50,6 @@ function playRound(humanChoice , computerChoice){
         
         console.log(`The organics have triumphed. ${player} beats ${cpu}`);
         ++humanScore;
-        return
+        return `Human points ${humanScore}`
         }
-    
-    /*const cpuWon = (function(player,cpu){
-        if ( 
-            ((player == "rock" ) && (cpu == "paper")) || 
-            ((player == "paper") && (cpu == "scissor")) ||
-            ((player == "scissor" ) && (cpu == "rock"))
-        ) {
-            console.log(`Skynet has won this round. ${cpu} beats ${player}`);
-        }
-    })*/
-
-    /* 
-    Retrieve both the human and comp choices
-    Compare them to each other
-    Establish win, lose and draw conditions
-    Inform the result and give a point
-    */
-
 }
