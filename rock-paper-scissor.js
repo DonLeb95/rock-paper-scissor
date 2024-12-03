@@ -60,13 +60,13 @@ function playGame() {
         console.log(roundInfo);
         playRound(getHumanChoice(),getComputerChoice());
     }
-    
-    /*
-    Initialize game and thus round
-    Inform current round
-    Confirm that the game doesnt end or restart points each round
-    End the game after 5 rounds
-    Inform winner/loser and final score of the game.
-    Reinitialize score values for any further play session
-    */
+
+    if (humanScore > computerScore){
+        console.log(`Life will continue flourishing. Humans ${humanScore} / Machines ${computerScore}`)
+    } else if (computerScore > humanScore){
+        console.log(`The simulacrum exoskeletons will prosper into eternity. Machines ${computerScore} / Humans ${humanScore}`)
+    } else console.log('Maybe cyborgs had it right all along')
+    humanScore = 0; 
+    computerScore = 0;
+    return console.log('Try the game again if you want :D')
 }
