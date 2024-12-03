@@ -28,7 +28,7 @@ function playRound(humanChoice , computerChoice){
     const player = humanChoice;
     const cpu = computerChoice;
     if (player == cpu) {
-        return 'This is a tie'
+        return console.log('This is a tie');
     }
     //Comparison for computers win, humans loss
     if ( 
@@ -38,7 +38,7 @@ function playRound(humanChoice , computerChoice){
     ) {
         console.log(`Skynet has won this round. ${cpu} beats ${player}`);
         ++computerScore;
-        return `Computer points ${computerScore}`
+        return console.log(`Computer points ${computerScore}`)
         }
 
     //Comparison for humans win, computers loss
@@ -50,6 +50,23 @@ function playRound(humanChoice , computerChoice){
         
         console.log(`The organics have triumphed. ${player} beats ${cpu}`);
         ++humanScore;
-        return `Human points ${humanScore}`
+        return console.log(`Human points ${humanScore}`)
         }
+}
+
+function playGame() {
+    for (let index = 0; index < 5; index++) {
+        const roundInfo = `Round ${index + 1}`;
+        console.log(roundInfo);
+        playRound(getHumanChoice(),getComputerChoice());
+    }
+    
+    /*
+    Initialize game and thus round
+    Inform current round
+    Confirm that the game doesnt end or restart points each round
+    End the game after 5 rounds
+    Inform winner/loser and final score of the game.
+    Reinitialize score values for any further play session
+    */
 }
