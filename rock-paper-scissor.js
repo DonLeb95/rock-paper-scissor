@@ -75,4 +75,4 @@ function playGame() {
 const gameStart = confirm('Want to play rock, paper scissor vs Computer? Remember to open console :D');
 if (gameStart == true){
     playGame();
-}
+} else console.log('Reload the page to start the game again');
