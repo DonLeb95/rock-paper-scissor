@@ -15,7 +15,8 @@ function getHumanChoice(){
         ,'Type "rock", "paper" or "scissor"').toLowerCase();
     if (myChoice != "rock" && myChoice != "paper" && myChoice != "scissor"){
         alert('Looks like there was a mistake somewhere.Please try again');
-        return;
+        const fixChoice = getHumanChoice();
+        return fixChoice;
     }
 
     return myChoice;
@@ -68,5 +69,10 @@ function playGame() {
     } else console.log('Maybe cyborgs had it right all along')
     humanScore = 0; 
     computerScore = 0;
-    return console.log('Try the game again if you want :D')
+    return console.log('Reload the page to try the game again :D')
+}
+
+const gameStart = confirm('Want to play rock, paper scissor vs Computer? Remember to open console :D');
+if (gameStart == true){
+    playGame();
 }
