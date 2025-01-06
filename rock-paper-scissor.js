@@ -54,13 +54,21 @@ function playRound(humanChoice , computerChoice){
         return console.log(`Human points ${humanScore}`)
         }
 }
+const buttons = document.querySelectorAll("button")
+
+buttons.forEach(button => {
+    button.addEventListener("click", e => {
+        const choice = e.target.id;
+        playRound(choice,getComputerChoice());
+    })
+});
 
 function playGame() {
-    for (let index = 0; index < 5; index++) {
+    /*for (let index = 0; index < 5; index++) {
         const roundInfo = `Round ${index + 1}`;
         console.log(roundInfo);
         playRound(getHumanChoice(),getComputerChoice());
-    }
+    } */
 
     if (humanScore > computerScore){
         console.log(`Life will continue flourishing. Humans ${humanScore} / Machines ${computerScore}`)
@@ -72,7 +80,7 @@ function playGame() {
     return console.log('Reload the page to try the game again :D')
 }
 
-const gameStart = confirm('Want to play rock, paper scissor vs Computer? Remember to open console :D');
+/*const gameStart = confirm('Want to play rock, paper scissor vs Computer? Remember to open console :D');
 if (gameStart == true){
     playGame();
-} else console.log('Reload the page to start the game again');
+} else console.log('Reload the page to start the game again');*/
