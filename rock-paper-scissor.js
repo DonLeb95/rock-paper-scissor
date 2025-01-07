@@ -24,12 +24,14 @@ function getHumanChoice(){
 
 let humanScore = 0;
 let computerScore = 0;
+let tieTally = 0;
 
 function playRound(humanChoice , computerChoice){
     const player = humanChoice;
     const cpu = computerChoice;
     if (player == cpu) {
-        return console.log('This is a tie');
+        ++tieTally
+        return 'This is a tie';
     }
     //Comparison for computers win, humans loss
     if ( 
@@ -39,7 +41,8 @@ function playRound(humanChoice , computerChoice){
     ) {
         console.log(`Skynet has won this round. ${cpu} beats ${player}`);
         ++computerScore;
-        return console.log(`Computer points ${computerScore}`)
+        return `Computer points ${computerScore}`
+        //console.log(`Computer points ${computerScore}`)
         }
 
     //Comparison for humans win, computers loss
@@ -51,15 +54,25 @@ function playRound(humanChoice , computerChoice){
         
         console.log(`The organics have triumphed. ${player} beats ${cpu}`);
         ++humanScore;
-        return console.log(`Human points ${humanScore}`)
+        return `Human points ${humanScore}`
         }
 }
-const buttons = document.querySelectorAll("button")
+
+function roundTally(humanScore,computerScore){
+
+};
+//round working, div results not working
+const buttons = document.querySelectorAll("button");
+const result = document.querySelector(".results");
+const tally = document.createElement("p");
+tally.style.whiteSpace = 'pre-line';
+result.appendChild(tally);
 
 buttons.forEach(button => {
     button.addEventListener("click", e => {
         const choice = e.target.id;
         playRound(choice,getComputerChoice());
+        tally.textContent = `Human points ${humanScore}\nComputer points ${computerScore}\nTies ${tieTally}`;
     })
 });
 
