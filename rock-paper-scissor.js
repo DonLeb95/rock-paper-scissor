@@ -67,6 +67,7 @@ const result = document.querySelector(".results");
 const tally = document.createElement("p");
 tally.style.whiteSpace = 'pre-line';
 result.appendChild(tally);
+tally.textContent = `Human points ${humanScore}\nComputer points ${computerScore}\nTies ${tieTally}`;
 
 buttons.forEach(button => {
     button.addEventListener("click", e => {
