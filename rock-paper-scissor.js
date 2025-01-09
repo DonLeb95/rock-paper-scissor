@@ -9,19 +9,6 @@ function getComputerChoice(){
     } else return "scissor"
 }
 
-//Prompts the user for their choice. 
-function getHumanChoice(){
-    let myChoice = prompt('Choose between rock, paper or scissor and type it. Your opponent will be your computer :)'
-        ,'Type "rock", "paper" or "scissor"').toLowerCase();
-    if (myChoice != "rock" && myChoice != "paper" && myChoice != "scissor"){
-        alert('Looks like there was a mistake somewhere.Please try again');
-        const fixChoice = getHumanChoice();
-        return fixChoice;
-    }
-
-    return myChoice;
-}
-
 let humanScore = 0;
 let computerScore = 0;
 let tieTally = 0;
@@ -58,9 +45,7 @@ function playRound(humanChoice , computerChoice){
         }
 }
 
-function roundTally(humanScore,computerScore){
 
-};
 //round working, div results not working
 const buttons = document.querySelectorAll("button");
 const result = document.querySelector(".results");
@@ -95,25 +80,3 @@ function finalResultText (){
         tieTally = 0;
     }
 }
-
-function playGame() {
-    /*for (let index = 0; index < 5; index++) {
-        const roundInfo = `Round ${index + 1}`;
-        console.log(roundInfo);
-        playRound(getHumanChoice(),getComputerChoice());
-    } */
-
-    if (humanScore > computerScore){
-        console.log(`Life will continue flourishing. Humans ${humanScore} / Machines ${computerScore}`)
-    } else if (computerScore > humanScore){
-        console.log(`The simulacrum exoskeletons will prosper into eternity. Machines ${computerScore} / Humans ${humanScore}`)
-    } else console.log('Maybe cyborgs had it right all along')
-    humanScore = 0; 
-    computerScore = 0;
-    return console.log('Reload the page to try the game again :D')
-}
-
-/*const gameStart = confirm('Want to play rock, paper scissor vs Computer? Remember to open console :D');
-if (gameStart == true){
-    playGame();
-} else console.log('Reload the page to start the game again');*/
