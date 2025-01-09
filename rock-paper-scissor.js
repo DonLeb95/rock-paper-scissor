@@ -69,13 +69,32 @@ tally.style.whiteSpace = 'pre-line';
 result.appendChild(tally);
 tally.textContent = `Human points ${humanScore}\nComputer points ${computerScore}\nTies ${tieTally}`;
 
+
 buttons.forEach(button => {
     button.addEventListener("click", e => {
         const choice = e.target.id;
+        finalResult.textContent = "";
         playRound(choice,getComputerChoice());
         tally.textContent = `Human points ${humanScore}\nComputer points ${computerScore}\nTies ${tieTally}`;
+        finalResultText();
     })
 });
+
+const finalResult = document.createElement("p");
+result.appendChild(finalResult);
+
+function finalResultText (){
+    if (humanScore == 5 || computerScore == 5 || tieTally == 5){
+        if (humanScore == 5){
+            finalResult.textContent = `Life will continue flourishing. Humans ${humanScore} / Machines ${computerScore}`;
+        } else if (computerScore == 5){
+            finalResult.textContent = `The simulacrum exoskeletons will prosper into eternity. Machines ${computerScore} / Humans ${humanScore}`;
+        } else finalResult.textContent =  'Maybe cyborgs had it right all along';
+        humanScore = 0; 
+        computerScore = 0;
+        tieTally = 0;
+    }
+}
 
 function playGame() {
     /*for (let index = 0; index < 5; index++) {
