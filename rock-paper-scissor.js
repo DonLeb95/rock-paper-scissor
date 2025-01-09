@@ -29,7 +29,6 @@ function playRound(humanChoice , computerChoice){
         console.log(`Skynet has won this round. ${cpu} beats ${player}`);
         ++computerScore;
         return `Computer points ${computerScore}`
-        //console.log(`Computer points ${computerScore}`)
         }
 
     //Comparison for humans win, computers loss
@@ -46,7 +45,7 @@ function playRound(humanChoice , computerChoice){
 }
 
 
-//round working, div results not working
+
 const buttons = document.querySelectorAll("button");
 const result = document.querySelector(".results");
 const tally = document.createElement("p");
