@@ -23,10 +23,5 @@ button {
 }
 
 img {
-    pointer-events: none;
-}
-
-button img:hover {
-    background: fixed;
-    background-color: rgb(255, 210, 210);
+    pointer-events:none;
 }

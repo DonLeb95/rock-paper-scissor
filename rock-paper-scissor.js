@@ -44,8 +44,6 @@ function playRound(humanChoice , computerChoice){
         }
 }
 
-
-
 const buttons = document.querySelectorAll("button");
 const result = document.querySelector(".results");
 const tally = document.createElement("p");
